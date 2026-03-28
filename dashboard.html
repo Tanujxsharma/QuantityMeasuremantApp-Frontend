@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quantity Measurement App</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>📏 Quantity Measurement App</h2>
+  <button onclick="logout()" class="logout-btn">Logout</button>
+</div>
+
+<div class="container-dashboard">
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('length')">Length</button>
+    <button class="tab-btn" onclick="switchTab('weight')">Weight</button>
+    <button class="tab-btn" onclick="switchTab('volume')">Volume</button>
+    <button class="tab-btn" onclick="switchTab('temperature')">Temperature</button>
+  </div>
+
+  <div id="length-tab" class="tab-content active">
+    <select id="length-operation">
+      <option value="add">Add</option>
+      <option value="subtract">Subtract</option>
+      <option value="divide">Divide</option>
+      <option value="compare">Compare</option>
+    </select>
+
+    <input id="length-v1" type="number">
+    <select id="length-u1">
+      <option value="FEET">FEET</option>
+      <option value="INCHES">INCHES</option>
+      <option value="YARDS">YARDS</option>
+      <option value="CENTIMETERS">CENTIMETERS</option>
+    </select>
+
+    <input id="length-v2" type="number">
+    <select id="length-u2">
+      <option value="FEET">FEET</option>
+      <option value="INCHES">INCHES</option>
+      <option value="YARDS">YARDS</option>
+      <option value="CENTIMETERS">CENTIMETERS</option>
+    </select>
+
+    <button onclick="performOperation('length')">Calculate</button>
+    <div id="length-result"></div>
+  </div>
+
+  <div id="weight-tab" class="tab-content">
+    <select id="weight-operation">
+      <option value="add">Add</option>
+      <option value="subtract">Subtract</option>
+      <option value="divide">Divide</option>
+      <option value="compare">Compare</option>
+    </select>
+
+    <input id="weight-v1" type="number">
+    <select id="weight-u1">
+      <option value="KILOGRAM">KG</option>
+      <option value="GRAM">GRAM</option>
+      <option value="POUND">POUNDS</option>
+      <option value="TONNE">TONNE</option>
+      <option value="MILLIGRAM">MILLIGRAM</option>
+      
+    </select>
+
+    <input id="weight-v2" type="number">
+    <select id="weight-u2">
+      <option value="KILOGRAM">KG</option>
+      <option value="GRAM">GRAM</option>
+      <option value="POUND">POUNDS</option>
+      <option value="TONNE">TONNE</option>
+      <option value="MILLIGRAM">MILLIGRAM</option>
+    </select>
+
+    <button onclick="performOperation('weight')">Calculate</button>
+    <div id="weight-result"></div>
+  </div>
+
+  <div id="volume-tab" class="tab-content">
+    <select id="volume-operation">
+      <option value="add">Add</option>
+      <option value="subtract">Subtract</option>
+      <option value="divide">Divide</option>
+      <option value="compare">Compare</option>
+    </select>
+
+    <input id="volume-v1" type="number">
+    <select id="volume-u1">
+      <option value="LITER">LITER</option>
+      <option value="MILLILITER">MILLILITER</option>
+      <option value="GALLON">GALLON</option>
+    </select>
+
+    <input id="volume-v2" type="number">
+    <select id="volume-u2">
+      <option value="LITER">LITER</option>
+      <option value="MILLILITER">MILLILITER</option>
+      <option value="GALLON">GALLON</option>
+    </select>
+
+    <button onclick="performOperation('volume')">Calculate</button>
+    <div id="volume-result"></div>
+  </div>
+
+  <div id="temperature-tab" class="tab-content">
+    <input id="temperature-v1" type="number">
+    <select id="temperature-u1">
+      <option value="CELSIUS">CELSIUS</option>
+      <option value="FAHRENHEIT">FAHRENHEIT</option>
+      <option value="KELVIN">KELVIN</option>
+    </select>
+
+    <input id="temperature-v2" type="number">
+    <select id="temperature-u2">
+      <option value="CELSIUS">CELSIUS</option>
+      <option value="FAHRENHEIT">FAHRENHEIT</option>
+      <option value="KELVIN">KELVIN</option>
+    </select>
+
+    <button onclick="performOperation('temperature')">Compare</button>
+    <div id="temperature-result"></div>
+  </div>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
