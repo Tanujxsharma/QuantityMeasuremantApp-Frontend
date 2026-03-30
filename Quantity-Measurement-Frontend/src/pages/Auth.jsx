@@ -3,6 +3,7 @@ import API from "../services/api";
 import { useNavigate } from "react-router-dom";
 
 export default function Auth() {
+
   const [isLogin, setIsLogin] = useState(true);
   const [data, setData] = useState({ username: "", password: "" });
   const [isLoading, setIsLoading] = useState(false);
@@ -35,11 +36,43 @@ export default function Auth() {
   };
 
   return (
-    <div>
-      {/* UI same rahega (tera code sahi hai) */}
-      <button onClick={handleSubmit}>
-        {isLogin ? "Login" : "Signup"}
-      </button>
+    <div className="min-h-screen flex items-center justify-center bg-slate-50">
+      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md space-y-4">
+
+        <h2 className="text-2xl font-bold text-center">
+          {isLogin ? "Login" : "Signup"}
+        </h2>
+
+        <input
+          name="username"
+          placeholder="Username"
+          onChange={handleChange}
+          className="w-full p-3 border rounded-lg"
+        />
+
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          onChange={handleChange}
+          className="w-full p-3 border rounded-lg"
+        />
+
+        <button
+          onClick={handleSubmit}
+          className="w-full bg-blue-500 text-white py-3 rounded-lg"
+        >
+          {isLogin ? "Login" : "Signup"}
+        </button>
+
+        <p
+          className="text-center text-blue-500 cursor-pointer"
+          onClick={() => setIsLogin(!isLogin)}
+        >
+          {isLogin ? "Switch to Signup" : "Switch to Login"}
+        </p>
+
+      </div>
     </div>
   );
 }
